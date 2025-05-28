@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="product-detail-container">
+    <div class="product-image">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    </div>
+    <div class="product-info">
+        <h1>{{ product.name }}</h1>
+        <p><strong>Category:</strong> {{ product.category.name }}</p>
+        <p><strong>Price:</strong> ${{ product.price|floatformat:2 }}</p>
+
+        <!-- Star Ratings (Placeholder) -->
+        <p><strong>Rating:</strong> ⭐⭐⭐⭐☆ (4.5/5)</p>
+
+        <p><strong>Description:</strong> {{ product.description }}</p>
+
+        <!-- Add to Cart & Buy Now Buttons -->
+        <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-outline-danger">
+            <i class="fa fa-heart"></i> Add to Wishlist
+        </a>
+        
+        <div class="buttons">
+            <form method="post" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <button type="submit" class="add-to-cart">Add to Cart 🛒</button>
+                <a href="{% url 'checkout'  %}" class="add-to-cart">Buy Now </a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .product-detail-container {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+    }
+    .product-image img {
+        width: 400px;
+        border-radius: 10px;
+    }
+    .product-info {
+        max-width: 500px;
+    }
+    .buttons {
+        margin-top: 20px;
+    }
+    .add-to-cart, .buy-now {
+        display: inline-block;
+        padding: 10px 15px;
+        margin-right: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .add-to-cart {
+        display: inline-block;
+        background-color: #218838;
+        color: #fff;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        border:none;
+        font-weight: bold;
+    }
+    .buy-now-button {
+        display: grid;
+        background-color: #218838;
+        {% comment %} color: #fff; {% endcomment %}
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    .add-to-cart:hover { background-color: #218838; }
+    {% comment %} .buy-now:hover { background-color: #0056b3; } {% endcomment %}
+</style>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Personal Information</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <label>Name:</label>
+    <input type="text" name="name" value="{{ profile.name }}">
+
+    <label>Email:</label>
+    <input type="email" name="email" value="{{ profile.email }}" readonly>
+
+    <label>Phone:</label>
+    <input type="text" name="phone" value="{{ profile.phone }}">
+
+    <label>Billing Address:</label>
+    <textarea name="billing_address">{{ profile.billing_address }}</textarea>
+
+    <label>Shipping Address:</label>
+    <textarea name="shipping_address">{{ profile.shipping_address }}</textarea>
+
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

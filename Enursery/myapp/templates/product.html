@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 20%;
+            background: #f4f4f4;
+            padding: 15px;
+            border-right: 1px solid #ddd;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .sidebar a:hover {
+            background: #ddd;
+        }
+        .product-container {
+            width: 80%;
+            padding: 20px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+        .buy-now-button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .buy-now-button:hover {
+            background-color: #0056b3;
+        }
+        .product_detail_link{
+            text-decoration:none;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Categories</h3>
+        <a href="{% url 'products' %}">All Products</a>
+        {% for category in categories %}
+            <a href="{% url 'products' %}?category={{ category.id }}">{{ category.name }} </a>
+        {% endfor %}
+    </div>
+
+    <!-- Products Section -->
+    <div class="product-container">
+        <h2>Products</h2>
+       
+        <div class="product-grid">
+            {% for product in products %}
+                <div class="product-card">
+                    <a class="product_detail_link" href="{% url 'product_detail' product.id %}">
+
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% endif %}
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.description|truncatechars:50 }}</p>
+                    <p><strong>Price: ${{ product.price }}</strong></p>
+                    <a class="buy-now-button" href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+                    <a class="buy-now-button" href="{% url 'checkout'  %}">Buy Now</a>
+                </div>
+            </a>
+            {% empty %}
+                <p>No products available in this category.</p>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Products</h1>
+    
+    <!-- Sidebar for categories -->
+     <aside>
+        <h3>Categories</h3>
+        <ul>
+            <li><a href="{% url 'products' %}">All</a></li>
+            {% for category in categories %}
+                <li><a href="{% url 'products_by_category' category.id %}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </aside>
+
+    <!-- Products Section -->
+    <section>
+        {% if products %}
+            {% for product in products %}
+                <div class="product-card">
+                    <h2>{{ product.name }}</h2>
+                    <p>Price: ${{ product.price }}</p>
+                    <p>Stock: {{ product.stock }}</p>
+                    <p>Description: {{ product.description }}</p>
+                    <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+                    <a href="{% url 'checkout' product.id %}">Buy Now</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No products available.</p>
+        {% endif %}
+    </section>
+</body>
+</html> {% endcomment %}
+{% endblock %}

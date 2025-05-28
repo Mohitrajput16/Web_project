@@ -1,0 +1,490 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+ <!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenNest- online Nuersery 
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    {% comment %} <link rel="stylesheet" href="{% static 'static/style.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'static/style.css' %}">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <div class="container-fluid gx-0 cont">
+{% comment %}
+      
+
+      
+      <!-- slider section-->
+{% comment %} <div class="container-fluid gx-0"> {% endcomment %}
+      <div class="row slider  gx-0 " >
+       <!-- <div class="col"> -->
+        <section class="hero gx-0"  >
+          <div class="hero-content gx-0">
+              <h2>Bring Nature Into Your Home!</h2>
+              <p style="color:white">Explore a variety of plants for every space, every season.</p>
+              <a class="btns btn-sm" href="{% url 'products' %}"> Shop Now</a>
+          </div>
+      </section>
+        <!-- <img src="media/slider2.jpeg"/> -->
+      
+      </div>
+
+      <!--categories section-->
+
+      <div class="row gx-0">
+        <h1 id="heading"> <b>Shop By Categories</b></h1>
+        <div class="col-md-3 " style=" padding-left: 40px;" >
+            <div class="card" style="width: 18rem; text-align: center;">
+              <a href="{% url 'products' %}">
+                <img src="static/media/indoorplant1.webp" class="card-img-top" alt="...">
+                <div class="card-body"></a>
+                  <p class="card-text"> Indoor Plants</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3 "  style=" padding-left: 20px;" >
+            <div class="card" style="width: 18rem;">
+              <a href="{% url 'products' %}">
+                <img src="static/media/outdoorplant1.jpg" class="card-img-top" alt="...">
+                <div class="card-body"></a>
+                  <p class="card-text"> Outdoor Plants</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3"  style=" padding-left: 20px;" >
+            <div class="card" style="width: 18rem;">
+              <a href="{% url 'products' %}">
+                <img src="static/media/herbs.jpg" class="card-img-top" alt="...">
+                <div class="card-body"></a>
+                  <p class="card-text"> Herbs</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-3"  style=" padding-left: 20px;" >
+            <div class="card" style="width: 18rem;">
+              <a href="{% url 'products' %}">
+                <img src="static/media/succlent.jpg" class="card-img-top" alt="...">
+                <div class="card-body"></a>
+                  <p class="card-text"> succulents</p>
+                </div>
+              </div>
+        </div>
+
+      </div>
+      <!--plants section-->
+      <div class="container-fluid gx-0">
+        <h1 id="heading"><b>Plants</b> </h1>
+        <div class="row gx-0">
+          <div class="col-md-3 " style="padding-left: 40px; padding-top: 20px;" >
+            <div class="card" style="width: 18rem;">
+              <img src="static/media/moneyplant.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <s>₹1499</s> <h5 class="card-title">₹799</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p> Money Plant - Golden</p>
+                <a class="btn btn-success" href="{% url 'products'%}">Buy Now</a>
+                <a   class="btn btn-outline-success" href="{% url 'products' %}">Add to Cart</a>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 p-4">
+            <div class="card" style="width: 18rem;">
+              <img src="static/media/bonsai.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <s>₹1499</s> <h5 class="card-title">₹799</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              
+                <p class="card-text">Ficus microcarpa Bonsai- Plant</p>
+                <a class="btn btn-success" href="{% url 'products'%}">Buy Now</a>
+                <a   class="btn btn-outline-success" href="{% url 'products' %}">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 p-4">
+            <div class="card" style="width: 18rem;">
+              <img src="static/media/MonsteraDeliciosa.jpg" class="card-img-top" alt="...">
+              <div class="card-body"><s>₹1499</s> <h5 class="card-title">₹799</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p>Monstera Deliciosa Plant</p>
+                <a class="btn btn-success" href="{% url 'products'%}">Buy Now</a>
+                <a   class="btn btn-outline-success" href="{% url 'products' %}">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 p-4">
+            <div class="card" style="width: 18rem;">
+              <img src="static/media/bamboo.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <s>₹1499</s> <h5 class="card-title">₹799</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              
+                <p class="card-text">Lucky Bamboo Plant - 3 Layer</p>
+                <a class="btn btn-success" href="{% url 'products'%}">Buy Now</a>
+                <a   class="btn btn-outline-success" href="{% url 'products' %}">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- popular-->
+       <div class="container-fluid gx-0">
+        <h1 id="heading"><b>Popular</b></h1>
+      <div class="container gx-0">
+        <div class="row gx-0">
+          <div class="col-md-8">
+              <div class="card bg-light text-white p-1 cards" style="border:none">
+              <img class="card-img" src="static/media/indoors.jpg" alt="Card image">
+              <div class="card-img-overlay p-4" >
+              <h3 class="card-title  cards-text ">Indoor Plants - Upto 30% Off</h3>
+              <p >Decorate Your Home With Variety Of Indoor Plants</p>
+              <a href="{% url 'products'%}" class="btns">Shop Now</a> 
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-light text-white p-1 cards" style="border:none">
+              <img class="card-img" src="static/media/seeds.jpg" alt="Card image">
+              <div class="card-img-overlay p-4" >
+                <h3 class="card-title  cards-text-small ">Organic Seeds - Upto 30% Off</h3>
+                <a href="#" class="btns">Shop Now</a>
+                </div>
+            </div>
+            <div class="card bg-light text-white p-1 cards " style="border:none">
+              <img class="card-img" src="static/media/tulsi.jpg" alt="Card image">
+              <div class="card-img-overlay p-4" >
+                <h3 class="card-title  cards-text-small ">Tulsi Plant - Best Selling</h3>
+                <a href="#" class="btns">Shop Now</a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <!--plant accessories-->
+
+    <h1 id="heading"><b>Accessories</b></h1>
+    <div class="container">
+      <div class="row gx-0">
+        <div class="col-md-4">
+          <div class="card bg-light text-dark p-1 cards" style="border:none">
+            <img class="card-img" src="static/media/accessories1.jpg" alt="Card image">
+            <div class="card-img-overlay p-4" >
+              <h3 class="card-title  cards-text-small ">Gardening Set - Upto 30% Off</h3>
+              <a href="#" class="btns">Shop Now</a>
+              </div>
+          </div>
+          <div class="card bg-light text-dark p-1 cards" style="border:none">
+            <img class="card-img" src="static/media/pots.jpg" alt="Card image">
+            <div class="card-img-overlay p-4" >
+              <h3 class="card-title  cards-text-small ">Ceramic Pots - Upto 30% Off</h3>
+              <a href="#" class="btns">Shop Now</a>
+              </div>
+          </div>
+        </div> 
+        <div class="col-md-8">
+          <div class="card bg-light text-white p-1 cards " style="border:none" >
+            <img class="card-img" src="static/media/soil1.jpg" alt="Card image">
+            <div class="card-img-overlay p-4" >
+            <h3 class="card-title  cards-text ">Ready Soil - Upto 30% Off</h3>
+            <p >Decorate Your Home With Variety Of Indoor Plants</p>
+            <a href="#" class="btns">Shop Now</a>
+            </div>
+        </div> 
+          </div>
+    </div>
+
+
+    <!-- video section-->
+
+    <div class="container p-5">
+      <div class="row">
+        <div class="col-md-12">
+      <h1> Get Plant Care Tips</h1>
+      <iframe width="100%" height="515" src="https://www.youtube.com/embed/oZcKTf4RLQ8?si=Ry1qRZ3gSiTJQUp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" ></iframe>  
+    </div> 
+  </div>
+</div>
+    <!--customer reveiws-->
+    <div class="container-fluid gx-0>
+      <div class="row gx-0">
+
+  <div class="header">
+    <h1>What Our customer Says</h1>
+
+    <!-- <p>Our Artificial Intelligence powered tools use millions of project data points
+      to ensure that your project is successful</p> -->
+  </div>
+  <div class="row1-container">
+    <div class="box box-down cyan">
+      <h4><span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span></h4>
+      <p>"I ordered several indoor plants from eNursery, and they exceeded my expectations!</p>
+      <p>- Siddharth</p>
+      <!-- <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt=""> -->
+    </div>
+
+    <div class="box red">
+      <h4><span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span></h4>
+      <p>"I ordered several indoor plants from eNursery, and they exceeded my expectations!</p>
+      <p>- Siddharth</p>
+    </div>
+
+    <div class="box box-down blue">
+            <h4><span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span></h4>
+      <p>"I ordered several indoor plants from eNursery, and they exceeded my expectations!</p>
+      <p>- Siddharth</p>
+    </div>
+  </div>
+  <div class="row2-container">
+    <div class="box orange">
+            <h4><span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span></h4>
+      <p>"I ordered several indoor plants from eNursery, and they exceeded my expectations!</p>
+      <p>- Siddharth</p>
+    </div>
+  </div>
+  
+</div>
+
+<!--FAQs-->
+
+<div class="container-fluid">
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-3">
+        <div class="col-lg-8 col-xl-7">
+          <span class="text-muted">F.A.Q</span>
+          <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <h2 class="pb-4 fw-bold">Have Any Questions?</h2>
+          We're here to help with all your plant needs! Whether you have a question about a specific plant, need assistance with your order, or just want to learn more about plant care, feel free to reach out. <br> <br>  
+          <a href="{% url 'contactus'%}" class="btn btn-success">Contact Us</a>    </div>
+        
+          <div class="col-md-7">
+          <div class="accordion" id="Questions-accordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Questions-headingOne"><button aria-controls="Questions-collapseOne" aria-expanded="false" class="accordion-button collapsed bg-light" data-bs-target="#Questions-collapseOne" data-bs-toggle="collapse" type="button">
+              <div class="text-muted me-3">
+                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"></path></svg>
+              </div>What types of plants do you offer?</button></h2>
+              <div aria-labelledby="Questions-headingOne" class="accordion-collapse collapse" data-bs-parent="#Questions-accordion" id="Questions-collapseOne">
+                <div class="accordion-body">
+                  We offer a wide variety of plants, including indoor plants, outdoor plants, succulents, flowering plants, herbs, and trees. You can explore plants by categories like low-light, pet-friendly, and air-purifying.                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Questions-headingTwo"><button aria-controls="Questions-collapseTwo" aria-expanded="false" class="accordion-button collapsed bg-light" data-bs-target="#Questions-collapseTwo" data-bs-toggle="collapse" type="button">
+              <div class="text-muted me-3">
+                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"></path></svg>
+              </div>Do you deliver plants to my location?
+            </button></h2>
+              <div aria-labelledby="Questions-headingTwo" class="accordion-collapse collapse" data-bs-parent="#Questions-accordion" id="Questions-collapseTwo">
+                <div class="accordion-body">
+                  Yes, we offer nationwide delivery! Shipping options may vary depending on your location. Simply enter your address at checkout to check availability and shipping times for your area.                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Questions-headingThree"><button aria-controls="Questions-collapseThree" aria-expanded="false" class="accordion-button collapsed bg-light" data-bs-target="#Questions-collapseThree" data-bs-toggle="collapse" type="button">
+              <div class="text-muted me-3">
+                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"></path></svg>
+              </div> How do I take care of my new plant?</button></h2>
+              <div aria-labelledby="Questions-headingThree" class="accordion-collapse collapse" data-bs-parent="#Questions-accordion" id="Questions-collapseThree">
+                <div class="accordion-body">
+                  Every plant comes with a care card that provides essential information on watering, light, and general maintenance. You can also visit our Care Tips section for detailed guides on caring for different types of plants.                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="Questions-headingFour"><button aria-controls="Questions-collapseFour" aria-expanded="false" class="accordion-button collapsed bg-light" data-bs-target="#Questions-collapseFour" data-bs-toggle="collapse" type="button">
+              <div class="text-muted me-3">
+                <svg class="bi bi-question-circle-fill" fill="currentColor" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"></path></svg>
+              </div>How do I know which plant is best for my space?
+            </button></h2>
+              <div aria-labelledby="Questions-headingFour" class="accordion-collapse collapse" data-bs-parent="#Questions-accordion" id="Questions-collapseFour">
+                <div class="accordion-body">
+                  We provide detailed information on each plant's needs, such as light, water, and temperature requirements. You can also use our Plant Finder tool to match plants with your living or workspace conditions.                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div></div>
+</div>
+{% endblock %} 
+      
+      <!--footer section-->
+      {% comment %} <div class="container-fluid gx-0">
+      <div class="row gx-0 mt-5">
+        <!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-top"  >
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block ">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="#" class="me-4 text-reset ic"><i class="fab fa-facebook-f"></i></a>
+      <a href="" class="me-4 text-reset ic" ><i class="fab fa-twitter"></i></a>
+      <a href="" class="me-4 text-reset ic"><i class="fab fa-google"></i></a>
+      <a href="#" class="me-4 text-reset ic"><i class="fab fa-instagram"></i></a>
+      <a href="" class="me-4 text-reset ic"><i class="fab fa-linkedin"></i></a>
+      
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+  {% endblock %} 
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5 gx-0">
+      <!-- Grid row -->
+      <div class="row mt-3 gx-0">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-leaf me-3 ic "></i>Greennest
+          </h6>
+          <p>
+            Get to know GreenNest! We're committed to helping you bring nature into your home with carefully curated, high-quality plants and expert care tips.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Indoor Plants</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Outdoor Plants</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Home Decor</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Accessories</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Your Account</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Cart</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Indore MP India</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>Greennest@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Greennest.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+      </div>
+    </div>
+
+  </div>
+</body>
+</html> {% endcomment %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Orders</h2>
+
+<table>
+    <tr>
+        <th>Order ID</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>Action</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td>#{{ order.id }}</td>
+        <td>{{ order.created_at }}</td>
+        <td>{{ order.get_status_display }}</td>
+        <td>${{ order.total_price }}</td>
+        <td><a href="#">Track Order</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        /* General Page Styling */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Checkout Container */
+    .checkout-container {
+        max-width: 800px;
+        margin: 50px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Page Heading */
+    .checkout-container h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    
+    /* Table Styles */
+    .checkout-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    
+    .checkout-table th, .checkout-table td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .checkout-table th {
+        background-color: #007BFF;
+        color: white;
+    }
+    
+    /* Product Image */
+    .product-image {
+        max-width: 80px;
+        border-radius: 5px;
+    }
+    
+    /* Total Price */
+    .total-price {
+        text-align: right;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    /* Checkout Button */
+    .checkout-button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+        background-color: #28a745;
+        color: white;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    
+    .checkout-button:hover {
+        background-color: #218838;
+    }
+    
+    </style>
+</head>
+<body>
+    
+        <div class="checkout-container">
+            <h2>Checkout</h2>
+    
+            {% if cart_items %}
+                <table class="checkout-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Image</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in cart_items %}
+                            <tr>
+                                <td>{{ item.product.name }}</td>
+                                <td>
+                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="product-image">
+                                </td>
+                                <td>{{ item.quantity }}</td>
+                                <td>${{ item.product.price|floatformat:2 }}</td>
+                                <td>${{ item.quantity|floatformat:2 }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+                <p class="total-price">Total: ${{ total_price|floatformat:2 }}</p>
+    
+                <form method="post" action="{% url 'place_order' %}">
+                    {% csrf_token %}
+                    <button type="submit">Confirm Order</button>
+                </form>            
+            {% else %}
+                <p>Your cart is empty.</p>
+            {% endif %}
+        </div>
+    </body>
+    </html>
+ 
+{% endblock %}
+
